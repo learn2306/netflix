@@ -25,7 +25,7 @@ const Home = () => {
 		return (
 			<div>	
 				{/* <Loading />	 */}
-				<Banner movie={popularMovies.results[3]} />
+				<Banner movie={topRatedMovies.results[2]} />
 				<div className='contents'>	
 					<h2>Airing Today</h2>	
 					<div className="items">

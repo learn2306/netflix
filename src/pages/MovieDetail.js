@@ -30,12 +30,7 @@ const MovieDetail = () => {
 					backgroundImage:
 						"url(" +
 						`https://www.themoviedb.org/t/p/w355_and_h200_multi_faces${showDetail?.poster_path}` +
-						")",
-						/* 
-						"url(" +
-						`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${showDetail?.poster_path}` +
-						")",
-						*/
+						")",						
 				}}
 				></div>
 			</Col>
@@ -66,11 +61,7 @@ const MovieDetail = () => {
 					<div className='detail-adult'>
 						<Badge bg="danger" text="light">Age</Badge>
 						{showDetail?.adult? "19+":"Under 18"}
-					</div>
-					{/* <div>
-						<Badge bg="danger" text="light">backdrop</Badge>
-						{showDetail?.}						
-					</div>	 */}					
+					</div>										
 				</div>
 				<div className="movpicture">
 					<div className="detail-backdrop"
@@ -86,12 +77,7 @@ const MovieDetail = () => {
 			</Col>
 			<Col lg={12} className="detail-info-group">							
 				<div className='detail-tagline'>{showDetail?.tagline}</div>
-				<div className='detail-overview'>{showDetail?.overview}</div>
-				{/* <div className="detail-info">					
-					<div className='detail-adult'>
-					{showDetail?.adult? "19+":"Under 18"}
-					</div>
-				</div>	 */}	
+				<div className='detail-overview'>{showDetail?.overview}</div>				
 			</Col>
 		</Row>
 	</Container>

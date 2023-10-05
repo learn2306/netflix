@@ -167,7 +167,8 @@ a {text-decoration: none; color: inherit;}
   padding: 100px 0;
   box-sizing: border-box; 
   margin: 0 auto;
-  width: 50%;
+  width: 40%;
+  letter-spacing: -1px;
 }
 .context h1 {
   margin-bottom: 20px;
