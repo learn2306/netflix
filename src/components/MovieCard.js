@@ -7,18 +7,18 @@ const MovieCard = ({item}) => {
 	let navigate = useNavigate();
 	const { genreList } = useSelector(state=>state.movie)	
   return (
-	<div className='card-group' onClick={()=>navigate(`/movies/${item.id}`)}>
+	<div className='card-group' onClick={()=>navigate(`/movies/${item.id}`)}>	
 		<div
-        className="card"
-        style={{
-          backgroundImage:
-            "url(" +
-            `https://image.tmdb.org/t/p/w355_and_h200_multi_faces${item?.backdrop_path}` +
-            ")",
+			className="card"
+			style={{
+			backgroundImage:
+				"url(" +
+				`https://image.tmdb.org/t/p/w355_and_h200_multi_faces${item?.backdrop_path}` +
+				")",
         }}
       >
 		<div className='card-overlay'>
-			<h1>{item.title}</h1>			
+			<h1>{item.name}</h1>			
 			<div className='genre'>
 				{item.genre_ids.map((id,idx)=>
 				<Badge bg="danger" key={idx}>
@@ -31,9 +31,7 @@ const MovieCard = ({item}) => {
 				<span className='adult-info'>{item.adult?"청소년관람불가":"청소년관람가"}</span>
 			</div>
 		</div>
-
 	  </div>
-
 	</div>
   )
 }

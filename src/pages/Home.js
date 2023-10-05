@@ -7,7 +7,7 @@ import MovieSlide from '../components/MovieSlide';
 
 const Home = () => {
 	const dispatch = useDispatch();
-	const {popularMovies, topRatedMovies, upcomingMovies, loading} = useSelector(state=>state.movie);
+	const {airingMovies, popularMovies, topRatedMovies, upcomingMovies, loading} = useSelector(state=>state.movie);
 	//console.log("home", popularMovies)
 	
 	/* const {popularMovies, topRatedMovies, upcomingMovies} = useSelector((state)=> state.movie) */
@@ -25,14 +25,24 @@ const Home = () => {
 		return (
 			<div>	
 				{/* <Loading />	 */}
-				<Banner movie={popularMovies.results[12]} />
-				<div className='contents'>		
+				<Banner movie={popularMovies.results[3]} />
+				<div className='contents'>	
+					<h2>Airing Today</h2>	
+					<div className="items">
+						<MovieSlide movie={airingMovies} />
+					</div>					
 					<h2>What's Popular</h2>
-					<MovieSlide movie={popularMovies} />
-					<h2>Top Rated Movies</h2>
-					<MovieSlide movie={topRatedMovies} />
-					<h2>Upcoming Movies</h2>		
-					<MovieSlide movie={upcomingMovies} />
+					<div className="items">
+						<MovieSlide movie={popularMovies} />
+					</div>
+					<h2>Top Rated TV</h2>
+					<div className="items">
+						<MovieSlide movie={topRatedMovies} />
+					</div>	
+					<h2>On The Air TV</h2>
+					<div className="items">						
+						<MovieSlide movie={upcomingMovies} />
+					</div>				
 				</div>
 			</div>
 			)

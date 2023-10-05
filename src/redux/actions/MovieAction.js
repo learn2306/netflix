@@ -14,14 +14,16 @@ import api from '../api';
 			try {
 				dispatch({type: "GET_MOVIES_REQUEST"})
 				/* const popularMovieApi = await api.get(`/movie/popular?api_key=${API_KEY}&language=en-US&page=1`) */
-				const popularMovieApi = api.get(`/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
-				const topRatedApi = api.get(`/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
-				const upcomingApi = api.get(`/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`)
+				const airingMovieApi = api.get(`/tv/airing_today?api_key=${API_KEY}&language=en-US&page=1`)
+				const popularMovieApi = api.get(`/tv/popular?api_key=${API_KEY}&language=en-US&page=1`)
+				const topRatedApi = api.get(`/tv/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
+				const upcomingApi = api.get(`/tv/on_the_air?api_key=${API_KEY}&language=en-US&page=1`)
 
 				/* 장르 정보를 요청하는 api */
-				const genreApi = api.get(`/genre/movie/list?api_key=${API_KEY}&language=en-US`)
+				const genreApi = api.get(`/genre/tv/list?api_key=${API_KEY}&language=en-US`)
 
-				let [popularMovies, topRatedMovies, upcomingMovies, genreList] = await Promise.all([
+				let [airingMovies, popularMovies, topRatedMovies, upcomingMovies, genreList] = await Promise.all([
+					airingMovieApi,
 					popularMovieApi,
 					topRatedApi,
 					upcomingApi,
@@ -32,12 +34,14 @@ import api from '../api';
 				dispatch({
 					type: "GET_MOVIE_SUCCESS",
 					payload: {
+						airingMovies: airingMovies.data,
 						popularMovies: popularMovies.data,
 						topRatedMovies: topRatedMovies.data,
 						upcomingMovies: upcomingMovies.data,
 						genreList: genreList.data.genres
 					}
 				})
+				//console.log(airingMovies)
 				/* console.log(popularMovies);
 				console.log(topRatedMovies)
 				console.log(upcomingMovies) */

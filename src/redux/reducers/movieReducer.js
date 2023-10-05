@@ -1,4 +1,5 @@
 let initialState = {
+	airingMovies: [],
 	popularMovies: [],
 	topRatedMovies: [],
 	upcomingMovies: [],
@@ -16,6 +17,7 @@ const movieReducer = (state=initialState, action) => {
 		case "GET_MOVIE_SUCCESS":
 			return {
 				...state,
+				airingMovies: payload.airingMovies,
 				popularMovies: payload.popularMovies,
 				topRatedMovies: payload.topRatedMovies,
 				upcomingMovies: payload.upcomingMovies,
