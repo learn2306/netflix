@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Badge } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-//import Video from '../components/Video';
+import Video from '../components/Video';
 
 const MovieDetail = () => {
 	let [showDetail, setShowDetail] = useState({});
@@ -72,7 +72,7 @@ const MovieDetail = () => {
 							")",				
 						}}
 						></div>
-					{/* <div className="vid"><Video /></div> */}									
+					<div className="vid"><Video /></div>								
 				</div>
 			</Col>
 			<Col lg={12} className="detail-info-group">							

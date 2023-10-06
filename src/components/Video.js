@@ -15,7 +15,7 @@ const Video = () => {
 	let {id} = useParams();
 
 	const showVideo = async() => {
-		let url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`;
+		let url = `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${API_KEY}&language=en-US`;
 		let response = await fetch(url);
 		let data = await response.json();
 		setYoutube(data.results[0]); //비디오 자료는 서버에서 다운로드 받을 때 순차적으로 다운받아서 실행해주므로 인덱스를 명시

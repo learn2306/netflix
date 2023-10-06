@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const LoginPage = () => {
+const LoginPage = () => {	
   return (
 	<div>
 		<div className="context">
