@@ -7,7 +7,8 @@ const Navigation = () => {
 	<div>
 		<Navbar expand="lg" variant="dark" bg="dark">
 			<Container fluid>
-				<Navbar.Brand Link to="/">
+				{/* <Navbar.Brand Link to="/"> */}
+				<Navbar.Brand link="true">
 					<img width={100} src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg" alt="logo" />
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="navbarScroll" />
@@ -22,10 +23,10 @@ const Navigation = () => {
 				</Nav>
 				<Form className="d-flex">
 					<Form.Control
-					type="search"
-					placeholder="Search"
-					className="me-2"
-					aria-label="Search"
+						type="search"
+						placeholder="Search"
+						className="me-2"
+						aria-label="Search"
 					/>
 					<Button variant="outline-danger">Search</Button>	
 					<Link to="/loginpage" className="login">Login</Link>				

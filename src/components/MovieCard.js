@@ -22,7 +22,7 @@ const MovieCard = ({item}) => {
 			<div className='genre'>
 				{item.genre_ids.map((id,idx)=>
 				<Badge bg="danger" key={idx}>
-					{genreList.find(item=>item.id==id).name}
+					{genreList.find(item=>item.id===id).name}
 				</Badge>)}
 				{/* {item.genre_ids} */}
 			</div>		
